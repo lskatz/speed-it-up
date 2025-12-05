@@ -6,7 +6,12 @@ This is not necessarily limited to just speed and so challenges could include ot
 
 ## Challenges
 
-Challenges will be run 
+```bash
+bash bin/run-challenges
+```
+
+This script will run all challenges.
+Sets of challenges will be defined as having the same categories (TODO).
 
 ## Developing challenges
 
