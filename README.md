@@ -7,11 +7,16 @@ This is not necessarily limited to just speed and so challenges could include ot
 ## Challenges
 
 ```bash
-bash bin/run-challenges
+bash bin/run-challenges.sh
 ```
 
 This script will run all challenges.
 Sets of challenges will be defined as having the same categories (TODO).
+
+```bash
+# TODO
+bash bin/compare-challenges.sh
+```
 
 ## Developing challenges
 

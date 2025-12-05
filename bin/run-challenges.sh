@@ -2,9 +2,6 @@
 
 thisDir=$(dirname "$0")
 
-categories=$(find $thisDir/../challenges -type f -name categories | \
-  xargs cat | sort -u)
-
 for challenge in challenges/*/*; do
   if [ -f "$challenge/run.sh" ]; then
     mkdir -p "$challenge/out"
