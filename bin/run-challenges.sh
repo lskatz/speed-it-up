@@ -10,9 +10,10 @@ function run_challenge {
     outdir=$(realpath "$thisDir/../times/$category.time")
     mkdir -pv "$outdir"
     outfile="$outdir/$(basename $challenge_dir).time.txt"
-    set -x
+    #set -x
     (
         cd "$challenge_dir"
+        mkdir -pv out
         echo -n "" > "$outfile"
         for rep in $(seq 1 $replicates); do 
             \time bash run.sh --output=devnull.txt >> "$outfile" 2>&1;
