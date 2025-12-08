@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master]
 
+permissions:
+  contents: write
+
 jobs:
   challenges:
     runs-on: ubuntu-20.04
@@ -17,11 +20,26 @@ jobs:
       run: bash bin/run-challenges.sh
 
     - name: Compare challenges
-      run: bash bin/compare-challenges.sh
+      run: |
+        echo "# Challenge Results" > RESULTS.md
+        echo "" >> RESULTS.md
+        echo "**Generated:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> RESULTS.md
+        echo "**Commit:** ${{ github.sha }}" >> RESULTS.md
+        echo "" >> RESULTS.md
+        echo "\`\`\`" >> RESULTS.md
+        bash bin/compare-challenges.sh >> RESULTS.md
+        echo "\`\`\`" >> RESULTS.md
+
+    - name: Commit and push results
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add RESULTS.md times/
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update challenge results [skip ci]" && git push)
 
     - name: Upload results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: challenge-times
         path: times/

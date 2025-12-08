@@ -4,6 +4,10 @@ This is a repository to contain computational challenges. Who can write the fast
 
 This is not necessarily limited to just speed and so challenges could include other computational metrics like memory.
 
+## Results!
+
+Results can be found in [/RESULTS.md].
+
 ## Challenges
 
 ```bash
