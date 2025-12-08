@@ -6,7 +6,7 @@ This is not necessarily limited to just speed and so challenges could include ot
 
 ## Results!
 
-Results can be found in [/RESULTS.md](RESULTS.md).
+Results can be found in [RESULTS.md](/RESULTS.md).
 
 ## Challenges
 
