@@ -1,0 +1,27 @@
+name: Run Challenges
+
+on:
+  push:
+    branches: [ master]
+  pull_request:
+    branches: [ master]
+
+jobs:
+  challenges:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v5
+
+    - name: Run challenges
+      run: bash bin/run-challenges.sh
+
+    - name: Compare challenges
+      run: bash bin/compare-challenges.sh
+
+    - name: Upload results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: challenge-times
+        path: times/
