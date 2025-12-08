@@ -1,3 +1,4 @@
 /challenges/**/out
 /challenges/**/time.txt
 /challenges/**/devnull.txt
+/times/*.time

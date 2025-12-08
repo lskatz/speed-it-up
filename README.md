@@ -11,12 +11,21 @@ bash bin/run-challenges.sh
 ```
 
 This script will run all challenges.
-Sets of challenges will be defined as having the same categories (TODO).
+Results of `time` (and any future benchmarks) will be in `times/*.time/`.
+Sets of challenges will be defined as having the same categories.
 
 ```bash
-# TODO
 bash bin/compare-challenges.sh
+
+Challenge     Contestant      reps  time(s)
+countgc.time  countGC-perl    10    .01
+countgc.time  countGC-python  10    .03
+perl.time     countGC-perl    10    .01
+python.time   countGC-python  10    .02
 ```
+
+In this example, someone could compare `countGC-perl` and `countGC-python`
+to compare the `countgc.time` challenge.
 
 ## Developing challenges
 
