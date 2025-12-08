@@ -10,6 +10,7 @@ function run_challenge {
     outdir=$(realpath "$thisDir/../times/$category.time")
     mkdir -pv "$outdir"
     outfile="$outdir/$(basename $challenge_dir).time.txt"
+    set -x
     (
         cd "$challenge_dir"
         echo -n "" > "$outfile"
